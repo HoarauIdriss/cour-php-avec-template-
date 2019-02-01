@@ -1,4 +1,22 @@
+
 <?php
+$db = Database::connect();
+$statement = $db->query('SELECT * FROM categories');
+$categories = $statement->fetchAll();
+foreach($categories as $category)
+
+{
+  if($category['id'] == '1')
+  
+      echo '<li class="nav-item active"><a class="nav-link" href="#">' . $category['name'] . '</a></li>';
+  
+  else
+  
+      echo '<li class="nav-item active"><a class="nav-link" href="#">' . $category['name'] . '</a></li>';
+}
+ 
+
+
  echo '<body>
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
